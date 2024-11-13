@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5_2402158김세희</title>
+    <!-- 1. 초기화 -->
+    <style>
+        * {
+            margin: 0; padding: 0;
+            font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
+        }
+        a { text-decoration: none; }
+        li { list-style: none; }
+    </style>
+    <!-- 기본 클래스 -->
+    <style>
+        .pull-left { float: left; }
+        .pull-right { float: right; }
+    </style>
+    <!-- 2. 페이지 구성 -->
+    <style>
+        body {
+            width: 960px; margin: 0 auto;
+            background: #E6E6E6;
+        }
+        #page-wrapper {
+            background: white;
+            margin: 40px 0; padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+    </style>
+    <!-- 3. 헤더 구성 -->
+    <style>
+        #main-header { padding: 40px 50px; }
+        .master-title {
+            font-size: 30px;
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; font-weight: 500;
+            color: #383838;
+        }
+    </style>
+    <!-- 4. 내비게이션 및 풀다운 메뉴 구성 -->
+    <style>
+        #main-navigation {
+            border-top: 1px solid #C8C8C8;
+            border-bottom: 1px solid #C8C8C8;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+        .outer-menu-item:hover {
+            background: black;
+            color: white;
+        }
+
+        .menu-title {
+            display: block;
+            height: 30px; line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px; left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+            text-align: center;
+        }
+        .inner-menu-item > a {
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+        .inner-menu-item > a:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+    <!-- 5. 검색 양식 추가(내비게이션 내부 검색) -->
+    <style>
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+
+        .input-search {
+            display: block;
+            float: left;
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            width: 120px; height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .input-search-submit {
+            display: block;
+            float: left;
+            width: 50px; height: 26px;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #CCCCCC;
+            margin-left: -1px;
+            vertical-align: top;
+            display: inline-block;
+        }
+    </style>
+    <!-- 6. 본문 추가(중앙 내용) -->
+    <style>
+        /* body 태그의 너비: 960px */
+        /* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920px */
+        #content { overflow: hidden; }
+
+        #main-section {
+            float: left;
+            width: 710px;
+        }
+
+        #main-aside {
+            float: right;
+            width: 200px;
+        }
+    </style>
+    <!-- 6. 본문 추가(본문 포스트 위쪽) -->
+    <style>
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #C8C8C8;
+        }
+
+        .article-header { padding: 20px 0; }
+        .article-title {
+            font-size: 25px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .article-date { font-size: 13px; }
+        .article-body {
+            font-size: 14px;
+        }
+    </style>
+    <!-- 6. 본문 추가(사이드 메뉴) -->
+    <style>
+        .aside-list { padding: 10px 0 30px 0; }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .aside-list li a {
+            margin-left: 8px;
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header"> <!--header-->
+            <hgroup>
+                <h1 class="master-title">CGV</h1>
+                <h2 class="master-description">MOVIE</h2>
+            </hgroup>
+        </header>
+        <nav id="main-navigation"> <!--nav-->
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">로맨스</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">싱글 인 서울</a></li>
+                            <li class="inner-menu-item"><a href="#">오늘 밤, 이 세계에서 이 사랑이 사라진다 해도</a></li>
+                            <li class="inner-menu-item"><a href="#">헤어질 결심</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">드라마</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">괴물</a></li>
+                            <li class="inner-menu-item"><a href="#">원더랜드</a></li>
+                            <li class="inner-menu-item"><a href="#">설계자</a></li>
+                            <li class="inner-menu-item"><a href="#">듄: 파트2</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">스릴러</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">그녀가 죽었다</a></li>
+                            <li class="inner-menu-item"><a href="#">타겟</a></li>
+                            <li class="inner-menu-item"><a href="#">앵커</a></li>
+                            <li class="inner-menu-item"><a href="#">아바타: 물의 길</a></li>
+                            <li class="inner-menu-item"><a href="#">오펜하이머</a></li>
+                            <li class="inner-menu-item"><a href="#">탈출: 프로젝트 사일런스</a></li>
+                            <li class="inner-menu-item"><a href="#">드라이브</a></li>
+                            <li class="inner-menu-item"><a href="#">라스트 썸머</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <div class="search-bar">
+                    <form>
+                        <input type="text" class="input-search">
+                        <input type="submit" class="input-search-submit" value="검색">
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section"> <!--section-->
+                <article> <!--article-->
+                    <div class="article-header">
+                        <h1 class="article-title">괴물</h1>
+                        <p class="article-date">2024년 11월 07일 재개봉</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMDhfNjgg%2FMDAxNzA5ODg3OTA0NDI5.zmvZAeWUA2yaoAVkJJ6c1fTTjPLRdOZiuE_mI5PZHtkg.24aJYI47PsYsqefJwtYNqRztKCs8JQxcnN4tjJnKTGUg.JPEG%2FIMG_1654.JPG&type=sc960_832">
+                        <br>
+                        <br>
+                        <p>고레에다 히로카즈 (감독)ㅣ 무기노 미나토 (쿠로카와 소야 扮) ㅣ 호시카와 요리 (히이라기 히나타 扮) ㅣ 무기노 사오리 (안도 사쿠라 扮)</p>
+                        <br>
+                        <p>“우리 동네에는 괴물이 산다” 싱글맘 사오리(안도 사쿠라)는 아들 미나토(쿠로카와 소야)의 행동에서 이상 기운을 감지한다. 용기를 내 찾아간 학교에서 상담을 진행한 날 이후 선생님과 학생들의 분위기가 심상치 않게 흐르기 시작하고. “괴물은 누구인가?” 한편 사오리는 친구들로부터 따돌림을 당하고 있는 미나토의 친구 요리(히이라기 히나타)의 존재를 알게 되고 자신이 아는 아들의 모습과 사람들이 아는 아들의 모습이 다르다는 사실을 어렴풋이 깨닫는데… 태풍이 몰아치던 어느 날, 아무도 몰랐던 진실이 드러난다.</p>
+                    </div>
+                </article>
+                <article> <!--article-->
+                    <div class="article-header">
+                        <h1 class="article-title">원더랜드</h1>
+                        <p class="article-date">2024년 06월 05일 대개봉</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MzFfMjg2%2FMDAxNzE3MTM4MzM3OTQ3.Tf9aK3Llz3TipyEuk3kKf6-GbgRgGqLVt553ocjLKXog.gson2pLWnekc52rBLxWxF1IuSI-yPnrDc9RIyxwWm20g.JPEG%2FF9E9EF01-4CE9-42F0-8C0F-D30623B4434C.jpg&type=sc960_832">
+                        <br>
+                        <br>
+                        <p>김태용 (감독) ㅣ 바이리 (탕웨이 扮) ㅣ 정인 (배수지 扮) ㅣ 태주 (박보검 扮) ㅣ 해리 (정유미 扮) ㅣ 현수 (최우식 扮)</p>
+                        <br>
+                        <p>언제 어디서든 다시 만날 수 있습니다. 죽은 사람을 인공지능으로 복원하는 ‘원더랜드’ 서비스가 일상이 된 세상, 어린 딸에게 자신의 죽음을 숨기기 위해 ‘원더랜드’ 서비스를 의뢰한 ‘바이리’와 사고로 누워있는 남자친구 ‘태주’를 ‘원더랜드’에서 우주인으로 복원해 행복한 일상을 나누는 ‘정인’. 사람들은 더 이상 그리워하거나 슬퍼하지 않는 삶을 선택할 수 있게 된다. ‘원더랜드’의 수석 플래너 ‘해리’와 신입 플래너 ‘현수’는 ‘원더랜드’를 찾는 사람들이 소중한 기억을 이어갈 수 있도록 바쁜 하루하루를 보낸다. 어린 시절부터 인공지능 부모님과 교감해온 ‘해리’는 이용자들의 상황을 더욱 세심히 살피고, ‘현수’는 의뢰받은 서비스에서 뜻밖의 비밀을 발견하게 되어 마음이 쓰인다. 어느 날 의식불명 상태의 ‘태주’가 기적처럼 깨어나 ‘정인’ 곁으로 돌아오고 다시 마주하게 된 모든 것이 낯설고 혼란스러운 ‘태주’와 그런 그와 함께하는 현실에 ‘정인’의 마음에는 조금씩 균열이 찾아온다. 한편, ‘원더랜드’에서 발굴 현장을 누비는 고고학자로 복원된 ‘바이리’는 딸과의 영상통화를 통해 친구 같은 엄마가 되기 위해 노력하지만 갑작스럽게 서비스가 종료되면서 예상치 못한 오류가 발생하는데….</p>
+                    </div>
+                </article>
+            </section> 
+            <aside id="main-aside"> <!--aside-->
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">홈</a></li>
+                        <li><a href="#">영화예매</a></li>
+                        <li><a href="#">모바일티켓</a></li>
+                        <li><a href="#">내쿠폰</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </div>
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#"><괴물>후기</a></li>
+                        <li><a href="#"><원더랜드>후기</a></li>
+                        <li><a href="#"><설계자>후기</a></li>
+                        <li><a href="#"><듄: 파트2>후기</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer id="main-footer"> <!--footer-->
+            <a href="#">CGV 한양여자대학교점</a>
+        </footer>
+    </div>
+</body>
+</html>
